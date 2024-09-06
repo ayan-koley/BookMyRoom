@@ -1,0 +1,143 @@
+<% layout("/layouts/boilerplate") %>
+<!-- <div class="card">
+      <div class="card-img">
+        <img src="<%= data.image %>" alt="" />
+      </div>
+      <div class="card-details">
+        <div class="title">
+          <h2><%= data.title %></h2>
+        </div>
+        <div class="description">
+          <h4><%= data.description %></h4>
+        </div>
+        <div class="price">
+          <h3><%= data.price %>/night</h3>
+        </div>
+      </div>
+      <div class="card-btns">
+        <form action="/hotels/edit/<%= data._id %>"><button class="btns">Edit</button></form>
+        <form action="/hotels/<%= data._id %>?_method=delete"><button class="btns">Delete List</button></form>
+      </div>
+    </div> -->
+<div class="show-outer offset-2">
+  <div class="d-flex justify-content-between">
+    <div class="title">
+      <h1><%= data.title %></h1>
+    </div>
+    <div class="d-flex align-items-center">
+      <a href="/hotels/edit/<%= data._id %>" class="btn btn-primary me-4"
+        >Edit Button</a
+      >
+      <form method="post" action="/hotels/delete/<%= data.id %>?_method=delete" >
+        <button class="btn btn-primary">Delete Button</button>
+      </form>
+    </div>
+  </div>
+  <div class="img-outer">
+    <div class="big-img">
+      <img src="<%= data.image %>" alt="" />
+    </div>
+    <div>
+      <div class="small-img1">
+        <img src="<%= data.image %>" alt="" />
+      </div>
+      <div class="small-img2">
+        <img src="<%= data.image %>" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <div class="desciption my-4">
+    <h4><%= data.description %></h4>
+  </div>
+  <div class="review-div">
+    <div class="review mt-5">
+      <!-- review section -->
+      <div class="row">
+        <div class="d-flex flex-wrap">
+          <% for(let i=0; i < 5; i++) { %>
+          <div class="card m-2 shadow" style="width: 47%">
+            <div class="d-flex justify-content-around pt-3">
+              <!-- <div class="rounded">
+                <img src="" alt="avatar" />
+              </div> -->
+              <div>author name</div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-rating">5 star</p>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <div class="booking">
+        <div class="timing">
+          <div class="entry-time">
+            <div>
+              <p class="check-in">Check In</p>
+            </div>
+            <div>
+              <p class="date">22/07/2024</p>
+            </div>
+          </div>
+          <div class="exit-time">
+            <div>
+              <p class="check-out">Check out</p>
+            </div>
+            <div>
+              <p class="date">22/07/2024</p>
+            </div>
+          </div>
+        </div>
+        <div class="guest-box">
+          <div class="guest">
+            <p>guest</p>
+            <p>1 guest</p>
+          </div>
+          <div class="guest-cnt">cnt</div>
+        </div>
+      </div>
+      <div class="button-div">
+        <button class="btn btn-reserve btn-primary">Reserve</button>
+      </div>
+      <div class="txt">
+        <p>You Wouldn't be changed it</p>
+      </div>
+      <div class="total-price-box">
+        <!-- Calculate price  -->
+        <div class="calculate-price">
+          <div>
+            <p><u>₹<%= data.price %> X 6 night</u></p>
+            <p><u>Airbnb service fee</u></p>
+          </div>
+          <div>
+            <p class="price">₹<%= data.price * 6 %></p>
+            <p class="price">₹100</p>
+          </div>
+        </div>
+        <div class="total-price">
+          <div class="price-txt">Total Price</div>
+          <div class="price-int">₹<%= data.price * 6 + 100 %></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- owner details -->
+  <!-- <div class="owner-details-listings my-4">
+    <div class="owner-details py-2 text-center">
+      <div class="owner-name"><h2>Ayan koley</h2></div>
+      <div class="owner-picture d-flex">
+        <img src="" class="border" alt="picture" />
+      </div>
+      <div class="owner-rating">
+        <h3>Rating</h3>
+      </div>
+    </div>
+    <div class="owner-listings">all are owner owner-rating</div>
+  </div>
+</div> -->
+</div>

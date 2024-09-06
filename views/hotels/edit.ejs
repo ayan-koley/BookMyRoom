@@ -1,0 +1,90 @@
+
+<% layout("layouts/boilerplate.ejs") %>
+<h1 class="text-center mt-5 text-decoration-underline main-text-color">Edit Page</h1>
+    <form method="post" action="/hotels/edit/<%= data._id %>?_method=patch" class="needs-validation" novalidate>
+      <!-- title part -->
+      <div class="col-7 mx-auto outer p-5">
+        <div class="col mb-3">
+          <label for="formGroupExampleInput" class="form-label">Title</label>
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            name="hotel[title]"
+            value="<%= data.title %>"
+            required
+          />
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            class="form-control"
+            placeholder="Leave a comment here"
+            id="floatingTextarea2"
+            style="height: 100px"
+            name="hotel[description]"
+            required
+          ><%= data.description %></textarea>
+          <label for="floatingTextarea2">Description</label>
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label"
+            >Image URL</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Example input placeholder"
+            name="hotel[image]"
+            value="<%= data.image %>"
+            required
+          />
+        </div>
+        <div class="mb-3 col-6">
+          <label for="formGroupExampleInput" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            id="formGroupExampleInput"
+            placeholder="Example input placeholder"
+            name="hotel[price]"
+            value="<%= data.price %>"
+            required
+          />
+        </div>
+        <div class="row">
+          <div class="mb-3 col">
+            <label for="formGroupExampleInput" class="form-label"
+              >Location</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Example input placeholder"
+              name="hotel[location]"
+              value="<%= data.location %>"
+              required
+            />
+          </div>
+          <div class="mb-3 col">
+            <label for="formGroupExampleInput" class="form-label"
+              >Country</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="formGroupExampleInput"
+              placeholder="Example input placeholder"
+              name="hotel[country]"
+              value="<%= data.country %>"
+              required
+            />
+          </div>
+        </div>
+        <button class="btn btn-danger">Submit</button>
+      </div>
+    </form>
+    <script src="/js/validation.js"></script>
+  </body>
+</html>

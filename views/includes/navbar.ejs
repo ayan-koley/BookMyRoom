@@ -1,0 +1,23 @@
+<!-- Navigation Bar -->
+<header class="sticky-top text-bg-light shadow">
+  <nav class="navbar d-flex justify-content-around">
+    <div class="navbar-logo">
+      <a href="#"><i class="fa-regular fa-compass fs-2 main-text-color"></i></a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="What are you looking for..." />
+      <input type="text" placeholder="Where" />
+      <select>
+        <option>All Categories</option>
+      </select>
+      <button class="btn btn-primary">Search</button>
+    </div>
+    <div>
+      <% if(!currUser) { %>
+      <a href="/home/signUp"><i class="fa-solid fa-user fs-4"></i></a>
+      <% } else { %>
+      <a href="/home/logout"><i class="fa-solid fa-right-from-bracket fs-4"></i></a>
+      <% } %>
+    </div>
+  </nav>
+</header>

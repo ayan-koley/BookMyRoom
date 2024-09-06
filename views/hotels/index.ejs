@@ -1,0 +1,114 @@
+<% layout('layouts/boilerplate') %>
+<!-- Hero Section -->
+<div id="carouselExampleIndicators" class="carousel slide">
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button>
+  </div>
+  <div class="carousel-inner" style="height: 30rem">
+    <div class="carousel-item active" style="height: 30rem">
+      <img
+        src="https://media2.thrillophilia.com/images/photos/000/179/092/original/1573798409_shutterstock_732188200.jpg?w=753&h=450&dpr=1.5"
+        class="d-block w-100 h-100 object-fit-fill"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://media.cntraveler.com/photos/655bd5cf605df2e78d2632ea/16:9/w_2560%2Cc_limit/London%2520Christmas_GettyImages-1444187574.jpg"
+        class="d-block w-100 h-100 object-fit-fill"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/places-to-visit-in-sydney-1550481767-785X440.jpg?width=384&quality=undefined"
+        class="d-block w-100 h-100 object-fit-fill"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Categories Section -->
+<section class="d-flex justify-content-around m-3">
+  <div class="category">
+    <i class="fas fa-shopping-bag"></i>
+    <p>Shops</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-hotel"></i>
+    <p>Hotels</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-cocktail"></i>
+    <p>Bars</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-utensils"></i>
+    <p>Restaurants</p>
+  </div>
+  <div class="category">
+    <i class="fas fa-ellipsis-h"></i>
+    <p>More</p>
+  </div>
+</section>
+
+<div class="content d-flex flex-wrap" style="margin-left: 5.5rem">
+  <% for(data of allData) { %>
+  <a href="hotels/show/<%= data._id %>" style="text-decoration:  none;">
+    <div class="card mx-4 mb-5 shadow" style="width: 25rem; height: 25rem;">
+      <div style="height: 15rem" class="overflow-hidden c">
+        <img
+          src="<%= data.image %>"
+          class="card-img-top object-fit-contain"
+          alt="Scenic Place"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= data.title %></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><%= data.description %></li>
+        <li class="list-group-item"><%= data.price %></li>
+      </ul>
+    </div>
+  </a>
+  <% }%>
+</div>
